@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mycat
+spec:
+  ports:
+  - name: client 
+    port: 8066
+    protocol: TCP
+  - name: admin
+    port: 9066
+    protocol: TCP
+  selector:
+    name: mycat
+  type:
+     NodePort
